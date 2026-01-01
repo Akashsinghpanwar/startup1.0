@@ -1,0 +1,1979 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blink &amp; Bling Design OS - UI Preview</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-role="designer" data-rail="collapsed" data-vault="locked">
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo">BB</div>
+          <div class="brand-name">
+            <span class="brand-main">Blink &amp; Bling</span>
+            <span class="brand-sub">Design OS</span>
+          </div>
+          <div class="workspace">
+            <span class="label">Workspace</span>
+            <div class="workspace-switch">
+              <button class="pill active" type="button">Store</button>
+              <button class="pill" type="button">Team</button>
+            </div>
+          </div>
+        </div>
+        <div class="search" id="global-search-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"></circle>
+            <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="2"></line>
+          </svg>
+          <input id="global-search" type="text" placeholder="Search projects, designs, vault, chat">
+          <button class="search-clear" type="button" aria-label="Clear search">x</button>
+          <span class="hint">Ctrl+K</span>
+          <div class="search-results" id="search-results" hidden>
+            <div class="result-group">
+              <div class="result-title">Projects</div>
+              <button class="result-item" type="button">RM-1042 - Oval Solitaire</button>
+              <button class="result-item" type="button">RM-1043 - Pendant</button>
+            </div>
+            <div class="result-group">
+              <div class="result-title">Designs</div>
+              <button class="result-item" type="button">Oval Solitaire v3</button>
+              <button class="result-item" type="button">Minimal Band v2</button>
+            </div>
+            <div class="result-group">
+              <div class="result-title">Vault</div>
+              <button class="result-item" type="button">Certificate - Oval Solitaire</button>
+              <button class="result-item" type="button">Invoice - RM-1042</button>
+            </div>
+            <div class="result-group">
+              <div class="result-title">Chat</div>
+              <button class="result-item" type="button">"Make prongs less visible"</button>
+              <button class="result-item" type="button">"Can we make the band thinner?"</button>
+            </div>
+          </div>
+        </div>
+        <div class="top-actions">
+          <div class="dropdown" data-dropdown>
+            <button class="btn primary" data-dropdown-toggle type="button">Create +</button>
+            <div class="dropdown-menu">
+              <button type="button" data-screen-link="screen-4">Start AI Session</button>
+              <button type="button" data-screen-link="screen-13" data-visibility="store-only">New Quote</button>
+              <button type="button" data-screen-link="screen-18" data-visibility="store-only">New Customer</button>
+              <button type="button" data-screen-link="screen-16" data-visibility="store-only">New Order</button>
+            </div>
+          </div>
+          <div class="dropdown" data-dropdown>
+            <button class="icon-btn" data-dropdown-toggle type="button" aria-label="Notifications">
+              <span class="icon-dot"></span>
+              <span class="count">4</span>
+            </button>
+            <div class="dropdown-menu wide">
+              <div class="menu-title">Notifications</div>
+              <div class="menu-item">Approvals waiting: 3 concept reviews</div>
+              <div class="menu-item">Production update: casting pass</div>
+              <div class="menu-item">Low stock: 18k yellow gold</div>
+              <div class="menu-item">Vendor reply: ETA confirmed</div>
+            </div>
+          </div>
+          <div class="dropdown" data-dropdown>
+            <button class="icon-btn" data-dropdown-toggle type="button" aria-label="Help">?</button>
+            <div class="dropdown-menu">
+              <div class="menu-title">Help</div>
+              <div class="menu-item">Keyboard shortcuts</div>
+              <div class="menu-item">Quick tour</div>
+              <div class="menu-item">Support chat</div>
+            </div>
+          </div>
+          <div class="dropdown profile" data-dropdown>
+            <button class="profile-btn" data-dropdown-toggle type="button">
+              <span class="avatar" id="profile-avatar">AK</span>
+              <span class="profile-meta">
+                <span class="name" id="profile-name">User</span>
+                <span class="role" id="profile-role">Designer</span>
+              </span>
+            </button>
+            <div class="dropdown-menu">
+              <div class="menu-title" id="workspace-display">Workspace: Default</div>
+              <div class="menu-item" id="user-role-display">Role: Designer</div>
+              <div class="menu-item">Settings</div>
+              <button class="menu-item" id="logout-btn" type="button" style="background: none; border: none; width: 100%; text-align: left; cursor: pointer; padding: 8px 12px; color: inherit;">
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <aside class="left-rail">
+        <nav class="rail-nav">
+          <button class="nav-item active" data-module="Dashboard" data-tooltip="Dashboard" type="button">
+            <span class="nav-ico">D</span>
+            <span class="nav-label">Dashboard</span>
+          </button>
+          <button class="nav-item" data-module="Studio" data-tooltip="Studio" type="button">
+            <span class="nav-ico">3</span>
+            <span class="nav-label">Studio</span>
+          </button>
+          <button class="nav-item" data-module="Quotes" data-tooltip="Quotes" type="button">
+            <span class="nav-ico">Q</span>
+            <span class="nav-label">Quotes</span>
+          </button>
+          <button class="nav-item" data-module="Orders" data-tooltip="Orders" type="button">
+            <span class="nav-ico">O</span>
+            <span class="nav-label">Orders</span>
+          </button>
+          <button class="nav-item" data-module="Vault" data-tooltip="Vault" type="button">
+            <span class="nav-ico">V</span>
+            <span class="nav-label">Vault</span>
+          </button>
+          <button class="nav-item" data-module="CRM" data-feature="crm" data-tooltip="CRM" type="button">
+            <span class="nav-ico">C</span>
+            <span class="nav-label">CRM</span>
+          </button>
+          <button class="nav-item" data-module="Inventory" data-feature="inventory" data-tooltip="Inventory" type="button">
+            <span class="nav-ico">I</span>
+            <span class="nav-label">Inventory</span>
+          </button>
+          <button class="nav-item" data-module="Vendors" data-feature="inventory" data-tooltip="Vendors" type="button">
+            <span class="nav-ico">S</span>
+            <span class="nav-label">Vendors</span>
+          </button>
+          <button class="nav-item" data-module="Reports" data-feature="report" data-tooltip="Reports" type="button">
+            <span class="nav-ico">R</span>
+            <span class="nav-label">Reports</span>
+          </button>
+          <button class="nav-item" data-module="Admin" data-feature="admin" data-tooltip="Admin" type="button">
+            <span class="nav-ico">A</span>
+            <span class="nav-label">Admin</span>
+          </button>
+        </nav>
+        <div class="rail-footer">
+          <button class="rail-toggle" type="button" data-rail-toggle aria-label="Toggle rail">
+            <span class="toggle-bars">
+              <span class="toggle-bar"></span>
+              <span class="toggle-bar"></span>
+              <span class="toggle-bar"></span>
+            </span>
+            <span class="toggle-label">Collapse</span>
+          </button>
+        </div>
+      </aside>
+      <main class="main-canvas">
+        <div class="canvas-toolbar">
+          <div class="canvas-title">
+            <span class="pill">Blink &amp; Bling Design OS</span>
+            <div class="active-screen">
+              <span id="active-screen-label">Dashboard</span>
+              <span class="module-pill" id="active-module">Dashboard</span>
+            </div>
+          </div>
+          <div class="screen-switcher" role="tablist" aria-label="Screen switcher">
+            <button class="screen-tab active" type="button" data-screen-target="screen-1">Dashboard</button>
+            <button class="screen-tab" type="button" data-screen-target="screen-5">AI Session</button>
+            <button class="screen-tab" type="button" data-screen-target="screen-4">Intake</button>
+            <button class="screen-tab" type="button" data-screen-target="screen-3d">3D Studio</button>
+            <button class="screen-tab" type="button" data-screen-target="screen-12">Checks</button>
+            <button class="screen-tab" type="button" data-screen-target="screen-13">Quote</button>
+            <button class="screen-tab" type="button" data-screen-target="screen-14">Approvals</button>
+            <button class="screen-tab" type="button" data-screen-target="screen-15">Pack</button>
+            <button class="screen-tab" type="button" data-screen-target="screen-16">Production</button>
+            <button class="screen-tab" type="button" data-screen-target="screen-17">Delivery</button>
+            <button class="screen-tab" type="button" data-screen-target="screen-vault">Vault</button>
+            <button class="screen-tab" type="button" data-screen-target="screen-2" data-visibility="store-only">Projects</button>
+            <button class="screen-tab" type="button" data-screen-target="screen-18" data-visibility="store-only">CRM</button>
+            <button class="screen-tab" type="button" data-screen-target="screen-19" data-visibility="store-only">Inventory</button>
+            <button class="screen-tab" type="button" data-screen-target="screen-20" data-visibility="store-only">Vendors</button>
+            <button class="screen-tab" type="button" data-screen-target="screen-21" data-visibility="store-only">Workshop</button>
+            <button class="screen-tab" type="button" data-screen-target="screen-reports" data-visibility="store-only">Reports</button>
+            <button class="screen-tab" type="button" data-screen-target="screen-22" data-visibility="store-only">Admin</button>
+          </div>
+        </div>
+
+        <div class="screen-wrapper">
+          <section class="screen" data-screen="screen-0" data-module="Dashboard" data-title="Sign in">
+            <div class="screen-header">
+              <div>
+                <h2>Sign in</h2>
+              </div>
+            </div>
+            <div class="screen-body login-stage">
+              <div class="login-modal">
+                <div class="modal-header">
+                  <h3>Blink &amp; Bling</h3>
+                </div>
+                <div class="stack">
+                  <button class="btn wide google" type="button">Continue with Google</button>
+                  <button class="btn wide microsoft" type="button">Continue with Microsoft</button>
+                </div>
+                <div class="divider">or</div>
+                <div class="field-grid">
+                  <label>Email</label>
+                  <input type="email" placeholder="you@store.com">
+                  <label>Password</label>
+                  <input type="password" placeholder="Password (optional)">
+                </div>
+                <div class="field-row">
+                  <div class="field">
+                    <label>Role hint</label>
+                    <div class="chip-row">
+                      <span class="chip active">Customer</span>
+                      <span class="chip">Jeweller</span>
+                      <span class="chip">Store</span>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label>Store code</label>
+                    <input type="text" placeholder="Store code or scan QR">
+                  </div>
+                </div>
+                <div class="actions">
+                  <button class="btn primary" type="button">Sign in</button>
+                  <button class="btn ghost" type="button">Guest access</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen active" data-screen="screen-1" data-module="Dashboard" data-title="Dashboard">
+            <div class="screen-header">
+              <div>
+                <h2>Dashboard</h2>
+                <p style="color: var(--muted); font-size: 13px; margin-top: 4px;">Overview of your designs and production pipeline</p>
+              </div>
+            </div>
+            <div class="screen-body">
+              <!-- METRICS ROW -->
+              <div class="metrics-grid">
+                <div class="card stat" data-metric="designs">
+                  <div class="metric-label">Total Designs</div>
+                  <div class="metric-value">24</div>
+                  <div class="metric-change positive">↑ 3 this month</div>
+                </div>
+                <div class="card stat" data-metric="inProgress">
+                  <div class="metric-label">In Progress</div>
+                  <div class="metric-value">7</div>
+                  <div class="metric-change">2 pending approval</div>
+                </div>
+                <div class="card stat" data-metric="completed">
+                  <div class="metric-label">Completed</div>
+                  <div class="metric-value">12</div>
+                  <div class="metric-change positive">↑ 85% completion</div>
+                </div>
+                <div class="card stat" data-metric="productionQueue">
+                  <div class="metric-label">In Production</div>
+                  <div class="metric-value">5</div>
+                  <div class="metric-change">Avg 3.2 days</div>
+                </div>
+              </div>
+
+              <div class="role-view" data-role-view="customer">
+                <div class="panel-header split">
+                  <h3>My Designs</h3>
+                  <button class="btn primary" type="button" data-screen-link="screen-4">+ New Design</button>
+                </div>
+                <div class="design-grid">
+                  <div class="design-card">
+                    <div class="design-title">Oval Solitaire</div>
+                    <div class="design-meta">
+                      <span class="badge pending">Pending Review</span>
+                      <span class="tag">2 updates</span>
+                    </div>
+                    <div class="design-foot">Next: Approve concept</div>
+                  </div>
+                  <div class="design-card">
+                    <div class="design-title">Wedding Band</div>
+                    <div class="design-meta">
+                      <span class="badge info">In Production</span>
+                      <span class="tag">ETA 12 days</span>
+                    </div>
+                    <div class="design-foot">Next: Track delivery</div>
+                  </div>
+                  <div class="design-card">
+                    <div class="design-title">Pendant Set</div>
+                    <div class="design-meta">
+                      <span class="badge">Brief</span>
+                      <span class="tag">AI ready</span>
+                    </div>
+                    <div class="design-foot">Next: Intake</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="role-view" data-role-view="store">
+                <div class="panel-header split">
+                  <h3>Ops</h3>
+                  <div class="tag-row">
+                    <span class="tag">Today</span>
+                    <span class="tag">Week</span>
+                  </div>
+                </div>
+                <div class="kpi-grid">
+                  <div class="kpi">
+                    <span class="label">Leads</span>
+                    <span class="value">18</span>
+                  </div>
+                  <div class="kpi">
+                    <span class="label">Approvals</span>
+                    <span class="value">7</span>
+                  </div>
+                  <div class="kpi">
+                    <span class="label">In build</span>
+                    <span class="value">12</span>
+                  </div>
+                  <div class="kpi">
+                    <span class="label">Late</span>
+                    <span class="value">2</span>
+                  </div>
+                </div>
+                <div class="grid-2">
+                  <div class="panel">
+                    <div class="panel-header">
+                      <h4>Pipeline</h4>
+                    </div>
+                    <div class="kanban">
+                      <div class="kanban-col">
+                        <span class="kanban-title">Lead</span>
+                        <div class="card">Amira - Halo ring</div>
+                      </div>
+                      <div class="kanban-col">
+                        <span class="kanban-title">Brief</span>
+                        <div class="card">Marcus - Pendant</div>
+                      </div>
+                      <div class="kanban-col">
+                        <span class="kanban-title">Concept</span>
+                        <div class="card">Priya - Cushion ring</div>
+                      </div>
+                      <div class="kanban-col">
+                        <span class="kanban-title">3D</span>
+                        <div class="card">Lena - Signet</div>
+                      </div>
+                      <div class="kanban-col">
+                        <span class="kanban-title">Approve</span>
+                        <div class="card">Noah - Trilogy</div>
+                      </div>
+                      <div class="kanban-col">
+                        <span class="kanban-title">Build</span>
+                        <div class="card">Zara - Eternity</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel">
+                    <div class="panel-header">
+                      <h4>Alerts</h4>
+                    </div>
+                    <div class="list">
+                      <div class="list-item">Concept approvals: 3 waiting</div>
+                      <div class="list-item">Casting risk: 2 jobs flagged</div>
+                      <div class="list-item">Vendor delay: 1 job</div>
+                      <div class="list-item">Low stock: 18k white gold</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel">
+                  <div class="panel-header">
+                    <h4>Weekly throughput</h4>
+                  </div>
+                  <div class="mini-chart">
+                    <div class="bar" style="--h: 70%"><span>Mon</span></div>
+                    <div class="bar" style="--h: 85%"><span>Tue</span></div>
+                    <div class="bar" style="--h: 60%"><span>Wed</span></div>
+                    <div class="bar" style="--h: 90%"><span>Thu</span></div>
+                    <div class="bar" style="--h: 75%"><span>Fri</span></div>
+                    <div class="bar" style="--h: 55%"><span>Sat</span></div>
+                    <div class="bar" style="--h: 40%"><span>Sun</span></div>
+                  </div>
+                  <div class="chart-legend">Concepts 12 | 3D 9 | Approved 7</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="screen-2" data-module="Dashboard" data-title="Projects" data-visibility="store-only">
+            <div class="screen-header">
+              <div>
+                <h2>Projects</h2>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="panel">
+                <div class="panel-header split">
+                  <h3>Projects</h3>
+                  <div class="chip-row">
+                    <span class="chip">Stage</span>
+                    <span class="chip">Due</span>
+                    <span class="chip">Assigned</span>
+                    <span class="chip">Risk</span>
+                  </div>
+                </div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Client</th>
+                      <th>Type</th>
+                      <th>Stage</th>
+                      <th>Due</th>
+                      <th>Owner</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>RM-1042</td>
+                      <td>Akash</td>
+                      <td>Ring</td>
+                      <td>Concept</td>
+                      <td>Oct 18</td>
+                      <td>Riya</td>
+                    </tr>
+                    <tr>
+                      <td>RM-1043</td>
+                      <td>Jules</td>
+                      <td>Pendant</td>
+                      <td>3D</td>
+                      <td>Oct 20</td>
+                      <td>H. Lin</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="panel">
+                <div class="panel-header split">
+                  <div>
+                    <h3>Room</h3>
+                    <div class="tag-row">
+                      <span class="pill">Oval Solitaire</span>
+                      <span class="pill">Concept</span>
+                    </div>
+                  </div>
+                  <div class="action-row">
+                    <button class="btn ghost" type="button">Share</button>
+                    <button class="btn ghost" type="button">Export</button>
+                    <button class="btn primary" type="button">Request Approval</button>
+                  </div>
+                </div>
+                <div class="room-chat">
+                  <div class="chat-thread">
+                    <div class="chat-bubble ai">Summary ready. Want the safer prong option?</div>
+                    <div class="chat-bubble user">Yes, and keep the band thin.</div>
+                    <div class="chat-bubble ai">Updated. Sending for approval.</div>
+                  </div>
+                  <div class="room-context collapsed">
+                    <div class="mini-tabs">
+                      <span>Brief</span>
+                      <span>Checks</span>
+                      <span>Quote</span>
+                    </div>
+                    <div class="mini-card">Context</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="screen-4" data-module="Studio" data-title="Intake">
+            <div class="screen-header">
+              <div>
+                <h2>Design Studio</h2>
+                <p style="color: var(--muted); font-size: 13px; margin-top: 4px;">Chat, generate images, sketch tweaks, and refine in real-time</p>
+              </div>
+              <div class="tag-row">
+                <span class="pill">New session</span>
+              </div>
+            </div>
+            <div class="screen-body chat-full-screen">
+              <!-- MAIN CHAT AREA -->
+              <div class="chat-container">
+                <div class="chat-main">
+                  <!-- Chat History -->
+                  <div class="chat-viewport" id="intake-chat-thread">
+                    <div class="chat-message ai-message">
+                      <div class="message-content">
+                        <p>Tell me about your jewelry design. What's the vision, style, and key details?</p>
+                      </div>
+                    </div>
+                    
+                    <div class="chat-message user-message">
+                      <div class="message-content">
+                        <p>Minimal, oval engagement ring with a hidden halo. Elegant but not too showy. White gold preferred.</p>
+                      </div>
+                    </div>
+
+                    <div class="chat-message ai-message">
+                      <div class="message-content">
+                        <p>Great concept! Generating a design concept for you...</p>
+                      </div>
+                      <div class="message-image">
+                        <div class="design-canvas-small" style="background: linear-gradient(135deg, #f0f9f7 0%, #f4f7f6 100%); min-height: 240px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--muted);">
+                          Generated design preview
+                        </div>
+                      </div>
+                      <div class="image-actions">
+                        <button class="btn small ghost" type="button" data-action="sketch">Sketch Tweaks</button>
+                        <button class="btn small ghost" type="button" data-action="refine">Refine Details</button>
+                        <button class="btn small ghost" type="button" data-action="variations">More Variations</button>
+                      </div>
+                    </div>
+
+                    <div class="chat-message user-message">
+                      <div class="message-content">
+                        <p>Love it! But the band looks a bit thick. Let me sketch what I'm thinking.</p>
+                      </div>
+                      <div class="message-image">
+                        <canvas id="sketch-canvas-inline" class="inline-sketch" width="320" height="200"></canvas>
+                      </div>
+                      <div class="image-actions">
+                        <button class="btn small ghost" type="button" data-action="upload">Upload Image</button>
+                        <button class="btn small ghost" type="button" data-action="clear">Clear</button>
+                      </div>
+                    </div>
+
+                    <div class="chat-message ai-message">
+                      <div class="message-content">
+                        <p>Perfect! I can see your sketch. Regenerating with a thinner band and refined proportions...</p>
+                      </div>
+                      <div class="message-image">
+                        <div class="design-canvas-small" style="background: linear-gradient(135deg, #e7f2ef 0%, #f0f9f7 100%); min-height: 240px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent);">
+                          Refined design preview
+                        </div>
+                      </div>
+                      <div class="image-actions">
+                        <button class="btn small primary" type="button" data-action="approve">Approve This</button>
+                        <button class="btn small ghost" type="button" data-action="sketch">Sketch More</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Input Area -->
+                  <div class="chat-input-area">
+                    <div class="input-actions">
+                      <button class="action-btn" type="button" title="Upload Image" id="chat-upload-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                          <polyline points="17 8 12 3 7 8"></polyline>
+                          <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                      </button>
+                      <button class="action-btn" type="button" title="Draw/Sketch" id="chat-sketch-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                        </svg>
+                      </button>
+                      <input id="chat-file-upload" class="file-input" type="file" accept="image/*" multiple>
+                    </div>
+                    <div class="composer-row">
+                      <input id="intake-message" class="chat-input" type="text" placeholder="Describe your next refinement or upload an image...">
+                      <button class="btn primary" id="intake-send" type="button">Send</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- SIDE PANEL: DESIGN BRIEF & PROPERTIES -->
+                <aside class="chat-sidebar panel">
+                  <div class="sidebar-header">
+                    <h3>Design Info</h3>
+                  </div>
+                  
+                  <div class="sidebar-section">
+                    <label class="section-label">Brief</label>
+                    <textarea id="design-brief" class="sidebar-input" rows="4" placeholder="Minimal, oval engagement ring...">Minimal oval engagement ring with hidden halo, white gold, thin band</textarea>
+                  </div>
+
+                  <div class="sidebar-section">
+                    <label class="section-label">References</label>
+                    <div class="reference-grid" id="sidebar-references">
+                      <label class="reference-upload-btn" for="sidebar-upload">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="12" y1="5" x2="12" y2="19"></line>
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                      </label>
+                      <input id="sidebar-upload" class="file-input" type="file" accept="image/*" multiple>
+                    </div>
+                  </div>
+
+                  <div class="sidebar-section" data-visibility="store-only">
+                    <label class="section-label">Status</label>
+                    <div class="status-list">
+                      <div class="status-item">
+                        <span class="status-icon">✓</span>
+                        <span>Brief confirmed</span>
+                      </div>
+                      <div class="status-item">
+                        <span class="status-icon">○</span>
+                        <span>Design locked</span>
+                      </div>
+                      <div class="status-item">
+                        <span class="status-icon">○</span>
+                        <span>3D approved</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="sidebar-section" data-visibility="store-only">
+                    <label class="section-label">Notes</label>
+                    <div class="notes-list">
+                      <div class="note-item">Margin target: 46%</div>
+                      <div class="note-item">Vendor: CastPro</div>
+                      <div class="note-item">QA: Prong check</div>
+                    </div>
+                  </div>
+
+                  <div class="sidebar-footer">
+                    <button class="btn primary full" id="approve-design-btn" disabled>Approve for 3D</button>
+                  </div>
+                </aside>
+              </div>
+
+              <!-- SKETCH MODAL (Hidden by default) -->
+              <div class="sketch-modal" id="sketch-modal" hidden>
+                <div class="sketch-modal-content">
+                  <div class="sketch-modal-header">
+                    <h3>Sketch Your Tweaks</h3>
+                    <button class="close-btn" type="button" data-close-modal>&times;</button>
+                  </div>
+                  <div class="sketch-modal-body">
+                    <canvas id="sketch-canvas-full" width="640" height="480"></canvas>
+                  </div>
+                  <div class="sketch-modal-toolbar">
+                    <div class="tool-group">
+                      <button class="btn ghost active" type="button" data-sketch-tool="draw">Draw</button>
+                      <button class="btn ghost" type="button" data-sketch-tool="erase">Erase</button>
+                    </div>
+                    <div class="tool-group">
+                      <button class="color-swatch" type="button" style="--swatch:#1f2a2e" data-sketch-color="#1f2a2e" aria-label="Black"></button>
+                      <button class="color-swatch" type="button" style="--swatch:#1f8a70" data-sketch-color="#1f8a70" aria-label="Green"></button>
+                      <button class="color-swatch" type="button" style="--swatch:#e07a5f" data-sketch-color="#e07a5f" aria-label="Coral"></button>
+                      <button class="color-swatch" type="button" style="--swatch:#1f6f8b" data-sketch-color="#1f6f8b" aria-label="Blue"></button>
+                    </div>
+                    <input class="range-input" type="range" min="1" max="20" value="4" data-sketch-size>
+                    <button class="btn ghost" type="button" data-sketch-clear>Clear</button>
+                    <button class="btn primary" type="button" id="sketch-send-btn">Send Sketch</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="screen-5" data-module="Dashboard" data-title="AI Session">
+            <div class="screen-header">
+              <div>
+                <h2>AI Session</h2>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="grid-2">
+                <div class="panel">
+                  <div class="panel-header">
+                    <h3>Conversation</h3>
+                  </div>
+                  <div class="chat-thread">
+                    <div class="chat-bubble ai">Tell me the vibe and key must-haves.</div>
+                    <div class="chat-bubble user">Minimal, bold oval stone, hidden halo.</div>
+                    <div class="chat-bubble ai">Metal preference?</div>
+                    <div class="chat-bubble user">White or platinum.</div>
+                  </div>
+                  <div class="voice-row">
+                    <button class="btn primary" type="button">Hold-to-talk</button>
+                    <div class="transcript">
+                      <span class="label">Transcript</span>
+                      <span>Low profile, comfort fit, 6 week deadline.</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel">
+                  <div class="panel-header">
+                    <h3>Design DNA</h3>
+                  </div>
+                  <div class="chip-grid">
+                    <div class="chip-row">
+                      <span class="chip">Budget 4,000 - 5,500</span>
+                      <span class="chip">Metal White / Platinum</span>
+                      <span class="chip">Stone Diamond / Lab</span>
+                    </div>
+                    <div class="chip-row">
+                      <span class="chip">Shape Oval</span>
+                      <span class="chip">Vibe Minimal</span>
+                      <span class="chip">Must-have Hidden halo</span>
+                    </div>
+                    <div class="chip-row">
+                      <span class="chip">Deadline 6 weeks</span>
+                      <span class="chip">Size 6.5</span>
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <button class="btn primary" type="button" data-screen-link="screen-4">Confirm + Create</button>
+                    <button class="btn ghost" type="button">Edit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3D STUDIO - AutoCAD-Style Interface -->
+          <section class="screen" data-screen="screen-3d" data-module="Studio" data-title="3D Studio">
+            <div class="screen-header">
+              <div>
+                <h2>3D Studio</h2>
+                <p style="color: var(--muted); font-size: 13px; margin-top: 4px;">Professional 3D editing with AutoCAD features</p>
+              </div>
+              <div class="tag-row">
+                <button class="pill full-screen-btn" type="button" id="fullscreen-3d" title="Full Screen">⛶</button>
+              </div>
+            </div>
+            <div class="screen-body studio-3d-full">
+              <!-- TOP TOOLBAR -->
+              <div class="cad-toolbar">
+                <div class="toolbar-group">
+                  <button class="tool-btn active" type="button" data-tool="select" title="Select (V)">Select</button>
+                  <button class="tool-btn" type="button" data-tool="orbit" title="Orbit (O)">Orbit</button>
+                  <button class="tool-btn" type="button" data-tool="pan" title="Pan (P)">Pan</button>
+                  <button class="tool-btn" type="button" data-tool="zoom" title="Zoom">Zoom</button>
+                </div>
+                <div class="toolbar-divider"></div>
+                <div class="toolbar-group">
+                  <button class="tool-btn" type="button" data-tool="measure">Measure</button>
+                  <button class="tool-btn" type="button" data-tool="dimension">Dimension</button>
+                  <button class="tool-btn" type="button" data-tool="section">Section</button>
+                </div>
+                <div class="toolbar-divider"></div>
+                <div class="toolbar-group">
+                  <button class="tool-btn" type="button" data-tool="fillet">Fillet</button>
+                  <button class="tool-btn" type="button" data-tool="chamfer">Chamfer</button>
+                  <button class="tool-btn" type="button" data-tool="extrude">Extrude</button>
+                </div>
+                <div class="toolbar-divider"></div>
+                <div class="toolbar-group">
+                  <button class="tool-btn" type="button" data-tool="screenshot">Screenshot</button>
+                  <button class="tool-btn" type="button" data-tool="export">Export</button>
+                  <button class="tool-btn primary" type="button" data-tool="approve">Approve for Production</button>
+                </div>
+              </div>
+
+              <!-- MAIN VIEWPORT -->
+              <div class="studio-3d-container">
+                <!-- LEFT SIDEBAR -->
+                <aside class="cad-sidebar left">
+                  <div class="sidebar-header">
+                    <h3>Model Tree</h3>
+                  </div>
+                  <div class="model-tree">
+                    <div class="tree-item expanded">
+                      <span class="tree-icon">▼</span>
+                      <span class="tree-label">Design</span>
+                    </div>
+                    <div class="tree-item child selected">
+                      <span class="tree-icon">◆</span>
+                      <span class="tree-label">Band</span>
+                    </div>
+                    <div class="tree-item child">
+                      <span class="tree-icon">◆</span>
+                      <span class="tree-label">Setting</span>
+                    </div>
+                    <div class="tree-item child">
+                      <span class="tree-icon">◆</span>
+                      <span class="tree-label">Stone</span>
+                    </div>
+                    <div class="tree-item child">
+                      <span class="tree-icon">◆</span>
+                      <span class="tree-label">Halo Accents</span>
+                    </div>
+                  </div>
+
+                  <div class="sidebar-section">
+                    <label class="section-label">View</label>
+                    <div class="view-buttons">
+                      <button class="view-btn" type="button" title="Front">Front</button>
+                      <button class="view-btn" type="button" title="Top">Top</button>
+                      <button class="view-btn" type="button" title="Side">Side</button>
+                      <button class="view-btn" type="button" title="Iso">Iso</button>
+                    </div>
+                  </div>
+
+                  <div class="sidebar-section">
+                    <label class="section-label">Render</label>
+                    <div class="render-buttons">
+                      <button class="render-btn active" type="button" data-render="wireframe">Wireframe</button>
+                      <button class="render-btn" type="button" data-render="shaded">Shaded</button>
+                      <button class="render-btn" type="button" data-render="material">Material</button>
+                    </div>
+                  </div>
+                </aside>
+
+                <!-- CENTER VIEWPORT -->
+                <div class="cad-viewport">
+                  <canvas id="viewport-3d" style="width: 100%; height: 100%;"></canvas>
+                  <div class="viewport-controls">
+                    <button class="control-btn" type="button" title="Zoom Fit">⊡</button>
+                    <button class="control-btn" type="button" title="Home">⌂</button>
+                  </div>
+                  <div class="viewport-info">
+                    <span class="info-item">Zoom: 100%</span>
+                    <span class="info-item">Grid: 1.0mm</span>
+                    <span class="info-item">Snap: ON</span>
+                  </div>
+                </div>
+
+                <!-- RIGHT SIDEBAR -->
+                <aside class="cad-sidebar right">
+                  <div class="sidebar-header">
+                    <h3>Properties</h3>
+                  </div>
+
+                  <div class="properties-panel">
+                    <div class="property-group">
+                      <label class="property-label">Band</label>
+                      <div class="property-items">
+                        <div class="property-item">
+                          <span class="prop-name">Width</span>
+                          <input class="prop-input" type="text" value="2.0mm">
+                        </div>
+                        <div class="property-item">
+                          <span class="prop-name">Height</span>
+                          <input class="prop-input" type="text" value="2.2mm">
+                        </div>
+                        <div class="property-item">
+                          <span class="prop-name">Thickness</span>
+                          <input class="prop-input" type="text" value="1.8mm">
+                        </div>
+                        <div class="property-item">
+                          <span class="prop-name">Material</span>
+                          <select class="prop-input">
+                            <option>18K White Gold</option>
+                            <option>Platinum</option>
+                            <option>14K Gold</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="property-group">
+                      <label class="property-label">Stone</label>
+                      <div class="property-items">
+                        <div class="property-item">
+                          <span class="prop-name">Width</span>
+                          <input class="prop-input" type="text" value="9.2mm">
+                        </div>
+                        <div class="property-item">
+                          <span class="prop-name">Height</span>
+                          <input class="prop-input" type="text" value="6.8mm">
+                        </div>
+                        <div class="property-item">
+                          <span class="prop-name">Depth</span>
+                          <input class="prop-input" type="text" value="4.5mm">
+                        </div>
+                        <div class="property-item">
+                          <span class="prop-name">Type</span>
+                          <select class="prop-input">
+                            <option>Diamond</option>
+                            <option>Lab Diamond</option>
+                            <option>CZ</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="property-group">
+                      <label class="property-label">Prongs</label>
+                      <div class="property-items">
+                        <div class="property-item">
+                          <span class="prop-name">Count</span>
+                          <select class="prop-input">
+                            <option>4 Prongs</option>
+                            <option>6 Prongs</option>
+                            <option>8 Prongs</option>
+                          </select>
+                        </div>
+                        <div class="property-item">
+                          <span class="prop-name">Height</span>
+                          <input class="prop-input" type="text" value="3.2mm">
+                        </div>
+                        <div class="property-item">
+                          <span class="prop-name">Thickness</span>
+                          <input class="prop-input" type="text" value="0.9mm">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="property-group">
+                      <label class="property-label">Halo</label>
+                      <div class="property-items">
+                        <div class="property-item checkbox">
+                          <input type="checkbox" id="halo-toggle" checked>
+                          <label for="halo-toggle">Halo Enabled</label>
+                        </div>
+                        <div class="property-item">
+                          <span class="prop-name">Halo Width</span>
+                          <input class="prop-input" type="text" value="1.2mm">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="property-stats">
+                      <div class="stat-item">
+                        <span class="stat-label">Est. Weight</span>
+                        <span class="stat-value">5.2g</span>
+                      </div>
+                      <div class="stat-item">
+                        <span class="stat-label">Cost</span>
+                        <span class="stat-value">$820</span>
+                      </div>
+                      <div class="stat-item">
+                        <span class="stat-label">Fit Check</span>
+                        <span class="stat-value good">✓ Pass</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="sidebar-footer">
+                    <button class="btn primary full" type="button">Save Design</button>
+                  </div>
+                </aside>
+              </div>
+
+              <!-- BOTTOM PANEL -->
+              <div class="cad-bottom-panel">
+                <div class="panel-tabs">
+                  <button class="panel-tab active" type="button" data-panel="details">Details</button>
+                  <button class="panel-tab" type="button" data-panel="manufacturing">Manufacturing</button>
+                  <button class="panel-tab" type="button" data-panel="checks">Quality Checks</button>
+                  <button class="panel-tab" type="button" data-panel="history">History</button>
+                </div>
+                <div class="panel-content">
+                  <div class="panel-section active" data-panel="details">
+                    <div class="detail-grid">
+                      <div class="detail-item">
+                        <span class="detail-label">Design ID</span>
+                        <span class="detail-value">RM-1042-v3</span>
+                      </div>
+                      <div class="detail-item">
+                        <span class="detail-label">Modified</span>
+                        <span class="detail-value">12 mins ago</span>
+                      </div>
+                      <div class="detail-item">
+                        <span class="detail-label">Status</span>
+                        <span class="detail-value badge">Ready</span>
+                      </div>
+                      <div class="detail-item">
+                        <span class="detail-label">Ring Size</span>
+                        <span class="detail-value">6.5</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-section" data-panel="manufacturing">
+                    <div class="mfg-list">
+                      <div class="mfg-item">Casting method: Investment casting</div>
+                      <div class="mfg-item">Finish: High polish</div>
+                      <div class="mfg-item">Setting notes: Tight fit required</div>
+                      <div class="mfg-item">QA: Prong torque check mandatory</div>
+                    </div>
+                  </div>
+                  <div class="panel-section" data-panel="checks">
+                    <div class="checks-list">
+                      <div class="check-item pass">
+                        <span class="check-status">✓</span>
+                        <span>Manufacturability</span>
+                      </div>
+                      <div class="check-item pass">
+                        <span class="check-status">✓</span>
+                        <span>Fit analysis</span>
+                      </div>
+                      <div class="check-item pass">
+                        <span class="check-status">✓</span>
+                        <span>Material spec</span>
+                      </div>
+                      <div class="check-item warn">
+                        <span class="check-status">!</span>
+                        <span>Prong height could be reduced by 0.2mm</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-section" data-panel="history">
+                    <div class="history-list">
+                      <div class="history-item">Created from image - 2 hours ago</div>
+                      <div class="history-item">Band width adjusted 2.5mm → 2.0mm - 1 hour ago</div>
+                      <div class="history-item">Prongs increased 4 → 6 - 45 mins ago</div>
+                      <div class="history-item">Material changed to White Gold - 12 mins ago</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="screen-9" data-module="Studio" data-title="Studio">
+            <div class="screen-header">
+              <div>
+                <h2>Studio</h2>
+              </div>
+              <div class="tag-row">
+                <span class="pill">Customer safe edits</span>
+                <span class="pill">Jeweller full control</span>
+              </div>
+            </div>
+            <div class="screen-body studio-full">
+              <div class="studio-top">
+                <div class="toolstrip">
+                  <button class="tool-btn" type="button" data-key="V">Select</button>
+                  <button class="tool-btn" type="button" data-key="O">Orbit</button>
+                  <button class="tool-btn" type="button" data-key="P">Pan</button>
+                  <button class="tool-btn" type="button" data-key="M">Measure</button>
+                  <button class="tool-btn" type="button">Section</button>
+                  <button class="tool-btn" type="button">Screenshot</button>
+                </div>
+                <div class="studio-toggles">
+                  <button class="btn ghost" type="button" data-panel-toggle="library">Library</button>
+                  <button class="btn ghost" type="button" data-panel-toggle="inspector">Inspector</button>
+                </div>
+              </div>
+              <div class="studio-canvas">
+                <aside class="studio-pane" data-panel="library">
+                  <div class="panel-header">
+                    <h4>Library</h4>
+                  </div>
+                  <div class="list">
+                    <div class="list-item">Solitaire</div>
+                    <div class="list-item">Halo</div>
+                    <div class="list-item">Signet</div>
+                    <div class="list-item">Bezel</div>
+                    <div class="list-item">Pave accents</div>
+                    <div class="list-item">Engraving</div>
+                  </div>
+                </aside>
+                <div class="viewport full">
+                  <div class="viewport-grid"></div>
+                  <svg class="cad-wireframe" viewBox="0 0 320 200" aria-hidden="true">
+                    <ellipse cx="160" cy="110" rx="90" ry="40" fill="none" stroke="#d1f0f2" stroke-width="2" />
+                    <ellipse cx="160" cy="110" rx="70" ry="26" fill="none" stroke="#76c7c0" stroke-width="2" stroke-dasharray="6 6" />
+                    <rect x="145" y="62" width="30" height="24" fill="none" stroke="#ffbfa3" stroke-width="2" />
+                    <line x1="70" y1="110" x2="250" y2="110" stroke="#8fd1cf" stroke-width="1" />
+                    <line x1="70" y1="110" x2="70" y2="90" stroke="#8fd1cf" stroke-width="1" />
+                    <line x1="250" y1="110" x2="250" y2="90" stroke="#8fd1cf" stroke-width="1" />
+                    <line x1="160" y1="62" x2="160" y2="40" stroke="#ffbfa3" stroke-width="1" />
+                    <line x1="145" y1="40" x2="175" y2="40" stroke="#ffbfa3" stroke-width="1" />
+                  </svg>
+                  <div class="cad-overlay">
+                    <div class="cad-axis">X | Y | Z</div>
+                    <div class="cad-readouts">
+                      <span>Ring size: 6.5</span>
+                      <span>Band: 2.0mm</span>
+                      <span>Stone: 9.2 x 6.8mm</span>
+                      <span>Metal: 18k white gold</span>
+                    </div>
+                  </div>
+                  <div class="viewport-label">Grid 1.0mm | Snap 0.25mm | Units: mm</div>
+                </div>
+                <aside class="studio-pane" data-panel="inspector">
+                  <div class="panel-header">
+                    <h4>Inspector</h4>
+                  </div>
+                  <div class="list">
+                    <div class="list-item">Band width: 2.0mm</div>
+                    <div class="list-item">Prongs: 4 claw</div>
+                    <div class="list-item">Stone: 9.2 x 6.8mm</div>
+                    <div class="list-item">Seat depth: 1.2mm</div>
+                    <div class="list-item">Engraving: A + R</div>
+                    <div class="list-item">Lock parameters</div>
+                  </div>
+                </aside>
+              </div>
+              <div class="studio-bottom">
+                <div class="panel">
+                  <div class="panel-header">
+                    <h4>Smart edit</h4>
+                  </div>
+                  <input type="text" placeholder="Make prongs less visible">
+                </div>
+                <div class="panel">
+                  <div class="panel-header">
+                    <h4>Versions</h4>
+                  </div>
+                  <div class="tag-row">
+                    <span class="tag">V1</span>
+                    <span class="tag">V2</span>
+                    <span class="tag">V3</span>
+                    <span class="tag">Compare</span>
+                    <span class="tag">Branch A/B</span>
+                    <span class="tag">Revert</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="screen-12" data-module="Studio" data-title="Checks">
+            <div class="screen-header">
+              <div>
+                <h2>Checks</h2>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="panel">
+                <div class="panel-header split">
+                  <h3>Manufacturability</h3>
+                  <button class="btn ghost" type="button">Auto-fix</button>
+                </div>
+                <div class="score-row">
+                  <span class="score">Score 82 / 100</span>
+                  <div class="toggle">
+                    <span class="toggle-dot"></span>
+                    <span>Risk zones</span>
+                  </div>
+                </div>
+                <div class="issue-list">
+                  <div class="issue high">
+                    <div class="issue-title">Prong thickness below minimum</div>
+                    <div class="issue-detail">18k white gold minimum 0.9mm, current 0.6mm.</div>
+                    <div class="issue-fix">Fix: increase prong thickness to 0.9mm.</div>
+                  </div>
+                  <div class="issue medium">
+                    <div class="issue-title">Seat depth too shallow</div>
+                    <div class="issue-detail">Stone seat depth at 1.0mm, target 1.3mm.</div>
+                    <div class="issue-fix">Fix: deepen seat by 0.3mm.</div>
+                  </div>
+                  <div class="issue low">
+                    <div class="issue-title">Resizing margin tight</div>
+                    <div class="issue-detail">Available resizing range: 0.25 size.</div>
+                    <div class="issue-fix">Fix: add 0.2mm to band thickness.</div>
+                  </div>
+                </div>
+                <div class="panel-header">
+                  <h4>Auto-fix preview</h4>
+                </div>
+                <div class="list">
+                  <div class="list-item">Increase prong thickness to 0.9mm</div>
+                  <div class="list-item">Deepen seat to 1.3mm</div>
+                  <div class="list-item">Add 0.2mm to band thickness</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="screen-13" data-module="Quotes" data-title="Quote">
+            <div class="screen-header">
+              <div>
+                <h2>Quote</h2>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="grid-2">
+                <div class="panel">
+                  <div class="panel-header">
+                    <h3>Price</h3>
+                  </div>
+                  <div class="list">
+                    <div class="list-item">Metal: 820</div>
+                    <div class="list-item">Stone: 1,400 - 1,900</div>
+                    <div class="list-item">Labour: 980</div>
+                    <div class="list-item">Add-ons: 120</div>
+                    <div class="list-item total">Total: 4,200 - 5,100</div>
+                  </div>
+                </div>
+                <div class="panel">
+                  <div class="panel-header">
+                    <h3>Timeline</h3>
+                  </div>
+                  <div class="list">
+                    <div class="list-item">Delivery: 14-21 days</div>
+                    <div class="list-item">Rush: +450</div>
+                    <div class="list-item">Capacity: Medium</div>
+                  </div>
+                  <div class="progress">
+                    <span class="progress-bar"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="screen-14" data-module="Orders" data-title="Approvals">
+            <div class="screen-header">
+              <div>
+                <h2>Approvals</h2>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="approval-grid">
+                <div class="approval-card">
+                  <h4>Concept</h4>
+                  <div class="list">
+                    <div class="list-item">Snapshot locked</div>
+                    <div class="list-item">Price band set</div>
+                    <div class="list-item">Signed approval</div>
+                  </div>
+                  <button class="btn ghost" type="button">Request changes</button>
+                </div>
+                <div class="approval-card">
+                  <h4>3D</h4>
+                  <div class="list">
+                    <div class="list-item">Snapshot ready</div>
+                    <div class="list-item">Params locked</div>
+                    <div class="list-item">Delivery set</div>
+                  </div>
+                  <button class="btn primary" type="button">Request approval</button>
+                </div>
+                <div class="approval-card">
+                  <h4>Pack</h4>
+                  <div class="list">
+                    <div class="list-item">Files generated</div>
+                    <div class="list-item">QC checklist ready</div>
+                    <div class="list-item">Delivery confirmed</div>
+                  </div>
+                  <div class="actions">
+                    <button class="btn ghost" type="button">Approve</button>
+                    <button class="btn ghost" type="button">Request changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="screen-15" data-module="Orders" data-title="Pack">
+            <div class="screen-header">
+              <div>
+                <h2>Pack</h2>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="panel">
+                <div class="panel-header">
+                  <h3>Production</h3>
+                </div>
+                <div class="grid-2">
+                  <div class="card">
+                    <h4>Files</h4>
+                    <div class="list">
+                      <div class="list-item">STL</div>
+                      <div class="list-item">STEP</div>
+                      <div class="list-item">3DM</div>
+                    </div>
+                    <h4>Stone list</h4>
+                    <div class="list">
+                      <div class="list-item">Oval 9.2 x 6.8mm - 1</div>
+                      <div class="list-item">Round 1.2mm melee - 18</div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <h4>Metal spec</h4>
+                    <div class="list">
+                      <div class="list-item">18k white gold</div>
+                      <div class="list-item">Estimated weight: 5.2g</div>
+                    </div>
+                    <h4>Job + QC</h4>
+                    <div class="list">
+                      <div class="list-item">Casting notes</div>
+                      <div class="list-item">Stone setting notes</div>
+                      <div class="list-item">Polish and hallmark</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="actions">
+                  <button class="btn ghost" type="button">Send to vendor</button>
+                  <button class="btn ghost" type="button">Assign workshop</button>
+                  <button class="btn primary" type="button">Download pack</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="screen-16" data-module="Orders" data-title="Production">
+            <div class="screen-header">
+              <div>
+                <h2>Production</h2>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="pipeline">
+                <div class="stage">
+                  <h4>Print / Wax</h4>
+                  <p>Status: Done</p>
+                  <p>Expected: Oct 5</p>
+                  <p>Photo/video upload</p>
+                  <p>Notes</p>
+                </div>
+                <div class="stage">
+                  <h4>Casting</h4>
+                  <p>Status: In progress</p>
+                  <p>Expected: Oct 8</p>
+                  <p>Photo/video upload</p>
+                  <p>Notes</p>
+                </div>
+                <div class="stage">
+                  <h4>Pre-polish</h4>
+                  <p>Status: Pending</p>
+                  <p>Expected: Oct 10</p>
+                  <p>Photo/video upload</p>
+                  <p>Notes</p>
+                </div>
+                <div class="stage">
+                  <h4>Setting</h4>
+                  <p>Status: Pending</p>
+                  <p>Expected: Oct 12</p>
+                  <p>Photo/video upload</p>
+                  <p>Notes</p>
+                </div>
+                <div class="stage">
+                  <h4>Final polish</h4>
+                  <p>Status: Pending</p>
+                  <p>Expected: Oct 14</p>
+                  <p>Photo/video upload</p>
+                  <p>Notes</p>
+                </div>
+                <div class="stage">
+                  <h4>Hallmark</h4>
+                  <p>Status: Pending</p>
+                  <p>Expected: Oct 15</p>
+                  <p>Photo/video upload</p>
+                  <p>Notes</p>
+                </div>
+                <div class="stage">
+                  <h4>QC</h4>
+                  <p>Status: Pending</p>
+                  <p>Expected: Oct 16</p>
+                  <p>Photo/video upload</p>
+                  <p>Notes</p>
+                </div>
+                <div class="stage">
+                  <h4>Dispatch</h4>
+                  <p>Status: Pending</p>
+                  <p>Expected: Oct 17</p>
+                  <p>Photo/video upload</p>
+                  <p>Notes</p>
+                </div>
+              </div>
+              <div class="panel">
+                <div class="panel-header">
+                  <h3>Customer view</h3>
+                </div>
+                <div class="progress">
+                  <span class="progress-bar"></span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="screen-17" data-module="Orders" data-title="Delivery">
+            <div class="screen-header">
+              <div>
+                <h2>Delivery</h2>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="panel">
+                <div class="panel-header">
+                  <h3>Shipment</h3>
+                </div>
+                <div class="thumb-grid">
+                  <div class="thumb">Final 1</div>
+                  <div class="thumb">Final 2</div>
+                </div>
+                <div class="list">
+                  <div class="list-item">Status: Out for delivery</div>
+                  <div class="list-item">Tracking: DZ-2048</div>
+                  <div class="list-item">ETA: Oct 22</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="screen-vault" data-module="Vault" data-title="Vault">
+            <div class="screen-header">
+              <div>
+                <h2>Vault</h2>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="vault-locked">
+                <div class="panel lock-panel">
+                  <h3>Enter PIN</h3>
+                  <p class="note">Session lasts 15 minutes.</p>
+                  <input id="vault-pin-input" type="password" inputmode="numeric" placeholder="PIN" maxlength="6">
+                  <div class="actions">
+                    <button class="btn primary" type="button" id="vault-pin-submit">Unlock</button>
+                    <button class="btn ghost" type="button" id="vault-pin-clear">Clear</button>
+                  </div>
+                  <div class="pin-status" id="vault-pin-status"></div>
+                  <div class="pin-help" data-visibility="store-only">
+                    <button class="btn ghost" type="button" id="vault-pin-reset">Forgot PIN</button>
+                  </div>
+                </div>
+              </div>
+              <div class="vault-unlocked">
+                <div class="panel vault-toolbar">
+                  <div class="panel-header split">
+                    <h3>Documents</h3>
+                    <input id="vault-search" type="text" placeholder="Search vault">
+                  </div>
+                  <div class="vault-layout">
+                    <div class="vault-folders">
+                      <div class="folder active">All files</div>
+                      <div class="folder">Certificates</div>
+                      <div class="folder" data-visibility="store-only">CAD exports</div>
+                      <div class="folder">Invoices</div>
+                      <div class="folder">Notes</div>
+                    </div>
+                    <div class="vault-files">
+                      <div class="file-card">
+                        <div class="file-thumb">Certificate</div>
+                        <div class="file-meta">
+                          <div class="file-name">Oval Solitaire Cert.pdf</div>
+                          <div class="file-actions">
+                            <button class="btn ghost" type="button">Preview</button>
+                            <button class="btn ghost" type="button">Download</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="file-card" data-visibility="store-only">
+                        <div class="file-thumb">3DM</div>
+                        <div class="file-meta">
+                          <div class="file-name">RM-1042_Model.3dm</div>
+                          <div class="file-actions">
+                            <button class="btn ghost" type="button">Preview</button>
+                            <button class="btn ghost" type="button">Download</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="file-card">
+                        <div class="file-thumb">Invoice</div>
+                        <div class="file-meta">
+                          <div class="file-name">Invoice_RM-1042.pdf</div>
+                          <div class="file-actions">
+                            <button class="btn ghost" type="button">Preview</button>
+                            <button class="btn ghost" type="button">Download</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel" data-visibility="store-only">
+                  <div class="panel-header">
+                    <h3>Audit trail</h3>
+                  </div>
+                  <div class="list">
+                    <div class="list-item">Designer accessed CAD export - Oct 6, 14:10</div>
+                    <div class="list-item">Customer viewed certificate - Oct 6, 11:22</div>
+                    <div class="list-item">Invoice downloaded - Oct 5, 16:40</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="screen-18" data-module="CRM" data-title="CRM" data-visibility="store-only">
+            <div class="screen-header">
+              <div>
+                <h2>CRM</h2>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="grid-2">
+                <div class="panel">
+                  <div class="panel-header">
+                    <h3>Leads</h3>
+                  </div>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Lead</th>
+                        <th>Stage</th>
+                        <th>Value</th>
+                        <th>Next step</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Meera</td>
+                        <td>Brief</td>
+                        <td>3,200</td>
+                        <td>Schedule call</td>
+                      </tr>
+                      <tr>
+                        <td>Kai</td>
+                        <td>Quote</td>
+                        <td>5,400</td>
+                        <td>Send payment link</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="kanban">
+                    <div class="kanban-col">
+                      <span class="kanban-title">Lead</span>
+                      <div class="card">New inquiry</div>
+                    </div>
+                    <div class="kanban-col">
+                      <span class="kanban-title">Brief</span>
+                      <div class="card">Brief sent</div>
+                    </div>
+                    <div class="kanban-col">
+                      <span class="kanban-title">Quote</span>
+                      <div class="card">Quote pending</div>
+                    </div>
+                    <div class="kanban-col">
+                      <span class="kanban-title">Won</span>
+                      <div class="card">Deposit paid</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel">
+                  <div class="panel-header">
+                    <h3>Tools</h3>
+                  </div>
+                  <div class="list">
+                    <div class="list-item">Appointment scheduler</div>
+                    <div class="list-item">Quote builder</div>
+                    <div class="list-item">Payment tracking</div>
+                    <div class="list-item">Conversion analytics</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="screen-19" data-module="Inventory" data-title="Inventory" data-visibility="store-only">
+            <div class="screen-header">
+              <div>
+                <h2>Inventory</h2>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="grid-2">
+                <div class="panel">
+                  <div class="panel-header">
+                    <h3>Stock</h3>
+                  </div>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>SKU</th>
+                        <th>Material</th>
+                        <th>Stock</th>
+                        <th>Reserved</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>AU18W</td>
+                        <td>18k White Gold</td>
+                        <td>620g</td>
+                        <td>140g</td>
+                      </tr>
+                      <tr>
+                        <td>DIA-1.2</td>
+                        <td>Diamond 1.2mm</td>
+                        <td>420</td>
+                        <td>96</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="panel">
+                  <div class="panel-header">
+                    <h3>Alerts</h3>
+                  </div>
+                  <div class="list">
+                    <div class="list-item">Low stock alerts</div>
+                    <div class="list-item">Reservations linked to design rooms</div>
+                    <div class="list-item">SKU details</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="screen-20" data-module="Vendors" data-title="Vendors" data-visibility="store-only">
+            <div class="screen-header">
+              <div>
+                <h2>Vendors</h2>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="grid-2">
+                <div class="panel">
+                  <div class="panel-header">
+                    <h3>Vendors</h3>
+                  </div>
+                  <div class="list">
+                    <div class="list-item">GemLab - SLA 5 days</div>
+                    <div class="list-item">CastPro - SLA 3 days</div>
+                    <div class="list-item">PolishWorks - SLA 2 days</div>
+                  </div>
+                </div>
+                <div class="panel">
+                  <div class="panel-header">
+                    <h3>Ops</h3>
+                  </div>
+                  <div class="list">
+                    <div class="list-item">Price updates</div>
+                    <div class="list-item">Send / receive job packs</div>
+                    <div class="list-item">Delivery ETA tracking</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="screen-21" data-module="Orders" data-title="Workshop" data-visibility="store-only">
+            <div class="screen-header">
+              <div>
+                <h2>Workshop</h2>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="grid-2">
+                <div class="panel">
+                  <div class="panel-header">
+                    <h3>Jobs board</h3>
+                  </div>
+                  <div class="kanban">
+                    <div class="kanban-col">
+                      <span class="kanban-title">To do</span>
+                      <div class="card">Set stones - RM-1042</div>
+                    </div>
+                    <div class="kanban-col">
+                      <span class="kanban-title">In progress</span>
+                      <div class="card">Polish - RM-1031</div>
+                    </div>
+                    <div class="kanban-col">
+                      <span class="kanban-title">QC</span>
+                      <div class="card">Hallmark - RM-1022</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel">
+                  <div class="panel-header">
+                    <h3>Tools</h3>
+                  </div>
+                  <div class="list">
+                    <div class="list-item">Capacity calendar</div>
+                    <div class="list-item">QC + rework log</div>
+                    <div class="list-item">Dispatch tracking</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="screen-reports" data-module="Reports" data-title="Reports" data-visibility="store-only">
+            <div class="screen-header">
+              <div>
+                <h2>Reports</h2>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="grid-2">
+                <div class="panel">
+                  <div class="panel-header">
+                    <h3>Revenue</h3>
+                  </div>
+                  <div class="mini-chart">
+                    <div class="bar" style="--h: 60%"><span>W1</span></div>
+                    <div class="bar" style="--h: 75%"><span>W2</span></div>
+                    <div class="bar" style="--h: 50%"><span>W3</span></div>
+                    <div class="bar" style="--h: 90%"><span>W4</span></div>
+                    <div class="bar" style="--h: 65%"><span>W5</span></div>
+                    <div class="bar" style="--h: 80%"><span>W6</span></div>
+                    <div class="bar" style="--h: 55%"><span>W7</span></div>
+                  </div>
+                </div>
+                <div class="panel">
+                  <div class="panel-header">
+                    <h3>Conversion</h3>
+                  </div>
+                  <div class="list">
+                    <div class="list-item">Leads: 132</div>
+                    <div class="list-item">Quotes sent: 68</div>
+                    <div class="list-item">Approved: 42</div>
+                    <div class="list-item">Conversion: 31.8%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="screen-22" data-module="Admin" data-title="Admin" data-visibility="store-only">
+            <div class="screen-header">
+              <div>
+                <h2>Admin</h2>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="grid-2">
+                <div class="panel">
+                  <div class="panel-header">
+                    <h3>Roles</h3>
+                  </div>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Role</th>
+                        <th>Access</th>
+                        <th>Scope</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Customer</td>
+                        <td>View, comment, approve</td>
+                        <td>Own projects</td>
+                      </tr>
+                      <tr>
+                        <td>Jeweller</td>
+                        <td>Edit, quote, approve</td>
+                        <td>Assigned rooms</td>
+                      </tr>
+                      <tr>
+                        <td>Admin</td>
+                        <td>Full access</td>
+                        <td>All workspaces</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="panel">
+                  <div class="panel-header">
+                    <h3>Security</h3>
+                  </div>
+                  <div class="list">
+                    <div class="list-item">Audit logs</div>
+                    <div class="list-item">Data retention policy</div>
+                    <div class="list-item">Export controls</div>
+                  </div>
+                  <button class="btn ghost" type="button">Download audit report</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <aside class="right-inspector">
+        <div class="inspector-header">
+          <div>
+            <div class="inspector-title">Context Panel</div>
+            <div class="inspector-sub">Brief | Properties | Checks | Quote | Timeline | Files</div>
+          </div>
+          <span class="pill">Live</span>
+        </div>
+        <div class="inspector-tabs">
+          <button class="inspector-tab active" type="button" data-tab="brief">Brief</button>
+          <button class="inspector-tab" type="button" data-tab="properties">Properties</button>
+          <button class="inspector-tab" type="button" data-tab="checks">Checks</button>
+          <button class="inspector-tab" type="button" data-tab="quote">Quote</button>
+          <button class="inspector-tab" type="button" data-tab="timeline">Timeline</button>
+          <button class="inspector-tab" type="button" data-tab="files">Files</button>
+        </div>
+        <div class="inspector-body">
+          <div class="tab-panel active" data-tab="brief">
+            <div class="context-block" data-screen="screen-4">
+              <h4>Intake</h4>
+              <div class="list">
+                <div class="list-item">Chat: 8 messages</div>
+                <div class="list-item">References: 0</div>
+                <div class="list-item">Approval: Pending</div>
+              </div>
+            </div>
+            <div class="context-block" data-screen="screen-5">
+              <h4>Design DNA</h4>
+              <div class="chip-row">
+                <span class="chip">Budget 4,000 - 5,500</span>
+                <span class="chip">Metal White / Platinum</span>
+                <span class="chip">Shape Oval</span>
+              </div>
+              <div class="chip-row">
+                <span class="chip">Vibe Minimal</span>
+                <span class="chip">Must-have Hidden halo</span>
+                <span class="chip">Deadline 6 weeks</span>
+              </div>
+            </div>
+            <div class="context-block" data-screen="screen-2">
+              <h4>Room</h4>
+              <div class="list">
+                <div class="list-item">Occasion: Engagement</div>
+                <div class="list-item">Budget: 4,000 - 5,000</div>
+                <div class="list-item">Type: Ring</div>
+              </div>
+            </div>
+            <div class="context-block" data-screen="default">
+              <h4>Brief</h4>
+              <div class="list">
+                <div class="list-item">Key requirements</div>
+                <div class="list-item">Vibe tags</div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-tab="properties">
+            <div class="context-block" data-screen="screen-9">
+              <h4>3D Properties</h4>
+              <div class="list">
+                <div class="list-item">Band width: 2.0mm</div>
+                <div class="list-item">Prong type: Claw (4)</div>
+                <div class="list-item">Stone dims: 9.2 x 6.8mm</div>
+                <div class="list-item">Seat depth: 1.2mm</div>
+                <div class="list-item">Engraving: A + R</div>
+              </div>
+            </div>
+            <div class="context-block" data-screen="default">
+              <h4>Properties</h4>
+              <div class="list">
+                <div class="list-item">Geometry</div>
+                <div class="list-item">Materials</div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-tab="checks">
+            <div class="context-block" data-screen="screen-12">
+              <h4>Checks</h4>
+              <div class="list">
+                <div class="list-item">Score 82 / 100</div>
+                <div class="list-item">3 issues flagged</div>
+                <div class="list-item">Risk zones on</div>
+              </div>
+            </div>
+            <div class="context-block" data-screen="default">
+              <h4>Checks</h4>
+              <div class="list">
+                <div class="list-item">Rulebook status</div>
+                <div class="list-item">Auto-fix preview</div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-tab="quote">
+            <div class="context-block" data-screen="screen-13">
+              <h4>Quote</h4>
+              <div class="list">
+                <div class="list-item">Metal: 820</div>
+                <div class="list-item">Stone: 1,400 - 1,900</div>
+                <div class="list-item">Labour: 980</div>
+                <div class="list-item">Total: 4,200 - 5,100</div>
+              </div>
+            </div>
+            <div class="context-block" data-screen="default">
+              <h4>Quote</h4>
+              <div class="list">
+                <div class="list-item">Price range</div>
+                <div class="list-item">Payment status</div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-tab="timeline">
+            <div class="context-block" data-screen="screen-13">
+              <h4>Delivery</h4>
+              <div class="list">
+                <div class="list-item">ETA: 14-21 days</div>
+                <div class="list-item">Rush: +450</div>
+                <div class="list-item">Capacity: Medium</div>
+              </div>
+            </div>
+            <div class="context-block" data-screen="screen-16">
+              <h4>Production Timeline</h4>
+              <div class="list">
+                <div class="list-item">Casting in progress</div>
+                <div class="list-item">QC scheduled</div>
+                <div class="list-item">Dispatch ETA Oct 17</div>
+              </div>
+            </div>
+            <div class="context-block" data-screen="default">
+              <h4>Timeline</h4>
+              <div class="list">
+                <div class="list-item">Stage plan</div>
+                <div class="list-item">Checkpoints</div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-tab="files">
+            <div class="context-block" data-screen="screen-15">
+              <h4>Pack</h4>
+              <div class="list">
+                <div class="list-item">STL, STEP, 3DM</div>
+                <div class="list-item">Stone list</div>
+                <div class="list-item">QC checklist</div>
+              </div>
+            </div>
+            <div class="context-block" data-screen="screen-vault">
+              <h4>Vault</h4>
+              <div class="list">
+                <div class="list-item">PIN required</div>
+                <div class="list-item">Folders + audit</div>
+                <div class="list-item">Preview + download</div>
+              </div>
+            </div>
+            <div class="context-block" data-screen="default">
+              <h4>Files</h4>
+              <div class="list">
+                <div class="list-item">References</div>
+                <div class="list-item">Exports</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <footer class="bottom-drawer">
+        <div class="drawer-tabs">
+          <button class="drawer-tab active" type="button" data-tab="comments">Comments</button>
+          <button class="drawer-tab" type="button" data-tab="activity">Activity Log</button>
+          <button class="drawer-tab" type="button" data-tab="versions">Versions</button>
+          <button class="drawer-tab" type="button" data-tab="tasks">Tasks</button>
+          <button class="drawer-tab" type="button" data-tab="calls">Call Notes</button>
+        </div>
+        <div class="drawer-body">
+          <div class="drawer-panel active" data-tab="comments">
+            <div class="comment">
+              <strong>Riya:</strong> Updated prong geometry for durability.
+            </div>
+            <div class="comment">
+              <strong>Customer:</strong> Can we make the band slightly thinner?
+            </div>
+            <div class="comment">
+              <strong>System:</strong> @mentions sent to CAD team.
+            </div>
+          </div>
+          <div class="drawer-panel" data-tab="activity">
+            <div class="list">
+              <div class="list-item">Version snapshot saved (V3)</div>
+              <div class="list-item">Approval requested for concept</div>
+              <div class="list-item">Manufacturing pack generated</div>
+            </div>
+          </div>
+          <div class="drawer-panel" data-tab="versions">
+            <div class="tag-row">
+              <span class="tag">V1</span>
+              <span class="tag">V2</span>
+              <span class="tag">V3</span>
+              <span class="tag">Compare side-by-side</span>
+              <span class="tag">Branch A/B</span>
+              <span class="tag">Revert</span>
+            </div>
+          </div>
+          <div class="drawer-panel" data-tab="tasks">
+            <div class="list">
+              <div class="list-item">Review manufacturability issues</div>
+              <div class="list-item">Confirm stone availability</div>
+              <div class="list-item">Schedule customer approval call</div>
+            </div>
+          </div>
+          <div class="drawer-panel" data-tab="calls">
+            <div class="list">
+              <div class="list-item">Call notes: Oct 4</div>
+              <div class="list-item">AI notes saved</div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="modal" id="approve-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-modal-close></div>
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Approve for 3D">
+        <h3>Approve for 3D Conversion</h3>
+        <p class="note">This locks the snapshot and queues 3D conversion.</p>
+        <textarea id="approve-comment" placeholder="Add comment (optional)"></textarea>
+        <div class="modal-actions">
+          <button class="btn ghost" type="button" data-modal-close>Cancel</button>
+          <button class="btn primary" type="button" id="approve-confirm">Confirm</button>
+        </div>
+      </div>
+    </div>
+    <div class="toast" id="toast">Version snapshot saved</div>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blink & Bling - Login</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .login-container {
+      background: white;
+      padding: 60px 40px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(25, 35, 35, 0.12);
+      width: 100%;
+      max-width: 450px;
+      text-align: center;
+    }
+
+    .login-header {
+      margin-bottom: 40px;
+    }
+
+    .login-logo {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-3) 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 32px;
+      font-weight: 700;
+      margin: 0 auto 20px;
+    }
+
+    .login-title {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--ink);
+    }
+
+    .login-subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+
+    .role-section {
+      margin-bottom: 40px;
+    }
+
+    .role-label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .role-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .role-btn {
+      padding: 20px;
+      border: 2px solid var(--line);
+      background: white;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .role-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: #f0f9f7;
+    }
+
+    .role-btn.selected {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: white;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 2px solid var(--line);
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .login-btn:hover:not(:disabled) {
+      background: #158060;
+      box-shadow: 0 8px 20px rgba(31, 138, 112, 0.3);
+    }
+
+    .login-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .demo-section {
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid var(--line);
+    }
+
+    .demo-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .demo-btn {
+      display: inline-block;
+      padding: 10px 16px;
+      background: #f0f9f7;
+      color: var(--accent);
+      border: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin: 0 6px;
+    }
+
+    .demo-btn:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    .error-msg {
+      color: #d32f2f;
+      font-size: 12px;
+      margin-top: 8px;
+      display: none;
+    }
+
+    .error-msg.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-header">
+      <div class="login-logo">BB</div>
+      <h1 class="login-title">Blink & Bling</h1>
+      <p class="login-subtitle">Design OS - Login</p>
+    </div>
+
+    <form id="login-form">
+      <div class="role-section">
+        <label class="role-label">Select Your Role:</label>
+        <div class="role-options">
+          <button type="button" class="role-btn" data-role="jeweler">
+            💎 Jeweler
+          </button>
+          <button type="button" class="role-btn" data-role="customer">
+            👤 Customer
+          </button>
+        </div>
+        <div class="error-msg" id="role-error">Please select a role</div>
+      </div>
+
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="workspace">Workspace</label>
+        <input type="text" id="workspace" name="workspace" placeholder="e.g., Store, Team" required>
+      </div>
+
+      <button type="submit" class="login-btn">Login to Dashboard</button>
+    </form>
+
+    <div class="demo-section">
+      <div class="demo-label">Quick Demo Access</div>
+      <button type="button" class="demo-btn" data-demo="jeweler">Demo - Jeweler</button>
+      <button type="button" class="demo-btn" data-demo="customer">Demo - Customer</button>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("login-form");
+    const roleButtons = document.querySelectorAll(".role-btn");
+    const demoButtons = document.querySelectorAll(".demo-btn");
+    const roleError = document.getElementById("role-error");
+    let selectedRole = null;
+
+    // Role selection
+    roleButtons.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        roleButtons.forEach((b) => b.classList.remove("selected"));
+        btn.classList.add("selected");
+        selectedRole = btn.dataset.role;
+        roleError.classList.remove("show");
+      });
+    });
+
+    // Form submission
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!selectedRole) {
+        roleError.classList.add("show");
+        return;
+      }
+
+      const username = document.getElementById("username").value;
+      const workspace = document.getElementById("workspace").value;
+
+      // Store user data
+      localStorage.setItem("bb_user_role", selectedRole);
+      localStorage.setItem("bb_username", username);
+      localStorage.setItem("bb_workspace", workspace);
+      localStorage.setItem("bb_logged_in", "true");
+
+      // Redirect to dashboard
+      window.location.href = "index.html";
+    });
+
+    // Demo access
+    demoButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const role = btn.dataset.demo;
+        const demoName = role === "jeweler" ? "Jeweler Demo" : "Customer Demo";
+
+        localStorage.setItem("bb_user_role", role);
+        localStorage.setItem("bb_username", demoName);
+        localStorage.setItem("bb_workspace", "Demo Workspace");
+        localStorage.setItem("bb_logged_in", "true");
+
+        window.location.href = "index.html";
+      });
+    });
+  </script>
+</body>
+</html>
